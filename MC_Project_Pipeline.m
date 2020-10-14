@@ -15,13 +15,19 @@ iterations = 10;                            % Setting iterations as 10 times for
 % Setting T = 100K for now
 % Create old particles
 old_positions = placing_particles(N, R, L);         % Creates old positions
-old_E = < old E >; % Insert old energy calculation 
-
+U_old = < old E >; % Insert old energy calculation 
+%%% < Insert line to append to another file >
 % Create a loop for new positions
 for i = 1:iterations
     new_positions = placing_particles(N, R, L); 
-    new_E = < new E >; % insert new energy calculation
+    U_new = < new E >; % insert new energy calculation
+    update = updateCheck(U_old, U_new, T); 
+    if update == true
+        old_positions = new_positions;
+    end
+    %%% < Insert line to append to another file >
     i = i + 1;
+end
 
 
 

@@ -4,7 +4,7 @@ function[r]=Dist(pos1,pos2,L)
 rcut = L/2; %max distance before particle is further than an image
 
 %%for loop to shift to nearest image
-r_vector = [] %initialize vector form of distance
+r_vector = []; %initialize vector form of distance
 for j = 1:3 %for each dimension
     if abs(pos1(j)-pos2(j)) > rcut %if particles are further than rcut away in this dimension
         if pos1(j) > pos2(j) %if pos2 is too little

@@ -1,4 +1,5 @@
 function [F] = LJF(epsilon,sigma,r)
-F = (24*epsilon).*(((sigma./r).^7)-((sigma./r).^13));
+
+F = (48.*epsilon./r).*(((sigma./r).^12)-((sigma./r).^6));
 
 end

@@ -23,7 +23,7 @@ pos1 = ((rand(3,(N-1))-0.5)*2)'; % Position N-1 particles (x, y, z)
 %%%%%%%%  Energy 
  for i = 1:S                                                 % Run for each simulation
     pos2 =((rand(3,1)-0.5)*2)' ;        % New position test particle
-    r = (dist(pos1,pos2,L));                   % Distance between particle test and others
+    r = (Dist(pos1,pos2,L));                   % Distance between particle test and others
     for ii = 1:N-1                                         % Run for each interaction 
         U2(i) = LJP(epsilon,sigma,r/2); % Energy of particle interaction
     end

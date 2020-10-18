@@ -15,7 +15,7 @@ pos = []; %Initializing matrix of positions
 U = []; %Initializing matrix of potential
 U1 =0; %Initial U
 U2 = [];
-pos1 = ((rand(3,(N-1))-0.5)*2)'; % Position N-1 particles (x, y, z)
+0
 
 
 
@@ -27,6 +27,7 @@ pos1 = ((rand(3,(N-1))-0.5)*2)'; % Position N-1 particles (x, y, z)
     for ii = 1:N-1                                         % Run for each interaction 
         U2(i) = LJP(epsilon,sigma,r/2); % Energy of particle interaction
     end
+    
     deltaU = sum(U2)-sum(U1);           % Change of energy
 if deltaU <= 0                                              % Accept conditon
     U1=U2;

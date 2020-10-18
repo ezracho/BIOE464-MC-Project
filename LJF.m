@@ -1,6 +1,6 @@
 function [F] = LJF(epsilon,sigma,r)
 
-F = (48.*epsilon./r).*(((sigma./r).^12)-((sigma./r).^6));
+F = (24.*epsilon./r).*(((12*sigma./r).^12)-((6*sigma./r).^6));
 
 
 end

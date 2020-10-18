@@ -10,7 +10,7 @@
     % While considering periodic boundary conditions (Rebecca)
 
 % Start by declaring space.  Change values as needed
-N = 500; R = 0.001; L = 1; T = 2.0;        % Declare number of particles, radius of particles, and space length (L x L x L)
+N = 500; R = 0.001; L = 1; T = 300;        % Declare number of particles, radius of particles, and space length (L x L x L)
 % Setting T = 2.0 K for now
 sigma = 1.5; epsilon  = 0.001;                    % Cutoff distance, well depth
 iterations = 1000;                            % Setting iterations as 10 times for now    
@@ -39,10 +39,10 @@ for i = 1:iterations
     %%% < Insert line to append to another file >
     i = i + 1;
 end
-% subplot(1, 2, 1);
-plot(U_hist);
-maxU = max(U_hist); ylim([-0.2*maxU, maxU]); 
-% subplot(1, 2, 2); plot(alt_pos_hist(:, 1));
+% % subplot(1, 2, 1);
+% plot(U_hist);
+% maxU = max(U_hist); ylim([-0.2*maxU, maxU]); 
+% % subplot(1, 2, 2); plot(alt_pos_hist(:, 1));
 
 
 

@@ -10,7 +10,7 @@ B = 1/(Kb*T);
 Utot = 0;                               % Initialize energy
 vir = 0;                                % Initialize Vir
 for i = 1: N-1
-    pos_calc = pos(i, :)   % Makes the position for calculations the current iteration row
+    pos_calc = pos(i, :);   % Makes the position for calculations the current iteration row
     % Now to find energy relative to this one point.  And force, why not
     for j = i+1 : N                             % Considers all values above "i"
         U_loop = 0; vir_loop = 0;                 % Initialize energy and force for current iteration

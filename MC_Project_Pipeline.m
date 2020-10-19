@@ -1,3 +1,4 @@
+function [pos_hist, P_hist, vir_hist, U_hist] = MC_Project_Pipeline(N, R, L, T, sigma, epsilon, iterations, rho_temp)
 %% Main pipeline; mostly pseudocode for now
 % Create the space
 % Generate old points 
@@ -41,7 +42,7 @@ for i = 1:iterations
     U_hist = [U_hist; U_old];
     %%%%  pressure calculations
     % pending to introduce rho and T vectors
-     vir_hist = [vir_hist; vir_old];
+    vir_hist = [vir_hist; vir_old];
     P_hist = [P_hist; P_old];
     r_hist = [r_hist; r_old];
     %%% < Insert line to append to another file >

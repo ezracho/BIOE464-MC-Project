@@ -46,7 +46,7 @@ for i = 1:iterations
     i = i + 1;
 end
 % subplot(1, 2, 1);
-plot(U_hist);
+% plot(U_hist);
 maxU = max(U_hist); ylim([-0.2*maxU, maxU]); 
 % % subplot(1, 2, 2); plot(alt_pos_hist(:, 1));
 

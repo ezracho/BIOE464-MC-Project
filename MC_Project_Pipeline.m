@@ -10,18 +10,19 @@
     % While considering periodic boundary conditions (Rebecca)
 % σ = 3.4 × 10-10 m and ε = 1.65 × 10-21
 % Start by declaring space.  Change values as needed
-N = 500; R = 0.005; L = 2; T = 2;        % Declare number of particles, radius of particles, and space length (L x L x L)
+N = 500; R = 0.001; L = 2; T = 300;        % Declare number of particles, radius of particles, and space length (L x L x L)
 % Setting T = 2.0 K for now
-sigma = 1; epsilon  = 1;                    % Cutoff distance, well depth
+sigma = 0.01; epsilon  = 0.1;                    % Cutoff distance, well depth
 iterations = 1000;                            % Setting iterations as 10 times for now    
 
 %% Create old particles
 old_positions = placing_particles(N, R, L);                         % Creates old positions
-[U_old, vir_old, P_old] = testw_alt(N, L, T, old_positions, sigma, epsilon);          % Insert old energy calculation
+[U_old, vir_old, P_old, r_old] = testw_alt(N, L, T, old_positions, sigma, epsilon);          % Insert old energy calculation
 pos_hist = old_positions;                                         % History of positions
 U_hist = U_old;                                                   % History of energy
 vir_hist = vir_old;                                                 % History of virials 
 P_hist = P_old;                                                        %History of Pressure 
+r_hist = r_old
 % Do something about "vir" (old and new)
     alt_pos_hist = [];                                              % For debugging
                     %%% < Insert line to append to another file > %%%
@@ -42,6 +43,7 @@ for i = 1:iterations
     % pending to introduce rho and T vectors
      vir_hist = [vir_hist; vir_old];
     P_hist = [P_hist; P_old];
+    r_hist = [r_hist; r_old];
     %%% < Insert line to append to another file >
     i = i + 1;
 end

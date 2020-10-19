@@ -38,6 +38,8 @@ for i = 1:iterations
     pos_hist = [pos_hist; old_positions];                           % History by appending positions
         % But like it's 100 positions each time, so...
     U_hist = [U_hist; U_old];
+    %%%%  pressure calculations
+    % pending to introduce rho and T vectors
      vir_hist = [vir_hist; vir_old];
     P_hist = [P_hist; P_old];
     %%% < Insert line to append to another file >

@@ -1,11 +1,13 @@
-function [Utot, vir] = testw_alt(N, L, T, pos, sigma, epsilon)
+function [Utot, vir, P] = testw_alt(N, L, T, pos, sigma, epsilon)
 % Returns the energy based on all interactions between particles
 % Takes inputs for side number of particles, side length, temperature, and
 % position matrix
     %%% Sigma = rcut; epsilon is for well depth
 %%% Does not yet use boundary conditions
     % Side length for boundary conditions
-Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
+V = L^3;
+ rho = 2; 
+ Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
 B = 1/(Kb*T);
 Utot = 0;                               % Initialize energy
 vir = 0;                                % Initialize Vir
@@ -23,6 +25,7 @@ for i = 1: N-1
         
         vir_loop = (r/3)*LJF(epsilon, sigma, r);        % Check subroutine; add cutoff
         vir = vir + vir_loop;
+        P = (rho/B)+vir./V;      % Pressure calculation (rho is defined at the top, but we will need  a loop
     end
 end
 % should have total energy for configuration at the end in Etot

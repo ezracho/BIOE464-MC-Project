@@ -1,4 +1,4 @@
-function [Utot, vir, P] = testw_alt(N, L, T, pos, sigma, epsilon)
+function [Utot, vir, P,r] = testw_alt(N, L, T, pos, sigma, epsilon)
 % Returns the energy based on all interactions between particles
 % Takes inputs for side number of particles, side length, temperature, and
 % position matrix
@@ -18,8 +18,9 @@ for i = 1: N-1
         U_loop = 0; vir_loop = 0;                 % Initialize energy and force for current iteration
         pos_loop = pos(j, :);                   % Take a single point
         diffD = pos_calc-pos_loop;                  
-        r = sqrt(diffD(1)^2 + diffD(2)^2 + diffD(3)^2);     % Calculate distance
-        
+
+      r = sqrt(diffD(1)^2 + diffD(2)^2 + diffD(3)^2);     % Calculate distance
+     %%r = (Dist(pos,pos2,L));   
         U_loop = LJP(epsilon, sigma, r);        % Cutoff already in LJP
         Utot = Utot + U_loop;
         

@@ -8,11 +8,11 @@
     % Also check for overlaps-while getting individual positions?
 % Determine energy with Leonard-Jones Function
     % While considering periodic boundary conditions (Rebecca)
-
+% σ = 3.4 × 10-10 m and ε = 1.65 × 10-21
 % Start by declaring space.  Change values as needed
-N = 500; R = 0.001; L = 1; T = 300;        % Declare number of particles, radius of particles, and space length (L x L x L)
+N = 500; R = 9.7*(10^-12); L = 7*(10^-12); T = 300;        % Declare number of particles, radius of particles, and space length (L x L x L)
 % Setting T = 2.0 K for now
-sigma = 1.5; epsilon  = 0.001;                    % Cutoff distance, well depth
+sigma = 3.4*10^(-10); epsilon  = 1.65*(10^-21);                    % Cutoff distance, well depth
 iterations = 1000;                            % Setting iterations as 10 times for now    
 
 %% Create old particles
@@ -39,9 +39,9 @@ for i = 1:iterations
     %%% < Insert line to append to another file >
     i = i + 1;
 end
-% % subplot(1, 2, 1);
-% plot(U_hist);
-% maxU = max(U_hist); ylim([-0.2*maxU, maxU]); 
+% subplot(1, 2, 1);
+plot(U_hist);
+maxU = max(U_hist); ylim([-0.2*maxU, maxU]); 
 % % subplot(1, 2, 2); plot(alt_pos_hist(:, 1));
 
 

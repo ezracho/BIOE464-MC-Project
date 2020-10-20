@@ -4,9 +4,16 @@ function [update] = updateCheck(U_old, U_new, T)
 % Takes energy calculations
 update = false;                             % Defaults false
 Kb = 1.38064852 * (10^-23); % m2 kg s-2 K-1 
-beta = T*Kb;
+beta = 1/(T*Kb);
+
 e_old = exp(-beta*U_old);
 e_new = exp(-beta*U_new);
+% Really lazy way of debugging by seeing energy and exp calculations
+U_old
+U_new
+e_old
+e_new
+val = exp(-beta*(U_new-U_old))
 if e_new > e_old
     update = true; 
     disp('here');

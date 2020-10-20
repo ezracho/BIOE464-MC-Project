@@ -2,12 +2,8 @@ function [Utot, vir, P] = testw_alt(N, L, T, pos, sigma, epsilon, rho)
 % Returns the energy based on all interactions between particles
 % Takes inputs for side number of particles, side length, temperature, and
 % position matrix
-    %%% Sigma = rcut; epsilon is for well depth
-%%% Does not yet use boundary conditions
-    % Side length for boundary conditions
 V = L^3;
- rho = 2; 
- Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
+Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
 B = 1/(Kb*T);
 Utot = 0;                               % Initialize energy
 vir = 0;                                % Initialize Vir
@@ -18,8 +14,6 @@ for i = 1: N-1
         U_loop = 0; vir_loop = 0;                 % Initialize energy and force for current iteration
         pos_loop = pos(j, :);                   % Take a single point
         diffD = pos_calc-pos_loop;                  
-
-        % r = sqrt(diffD(1)^2 + diffD(2)^2 + diffD(3)^2);     % Calculate distance
         r = (Dist(pos_calc,pos_loop,L));
         U_loop = LJP(epsilon, sigma, r);        % Cutoff already in LJP
         Utot = Utot + U_loop;

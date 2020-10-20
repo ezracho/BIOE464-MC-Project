@@ -9,12 +9,7 @@ function [pos_hist, P_hist, vir_hist, U_hist] = MC_Project_Pipeline(N, R, L, T, 
     % Also check for overlaps-while getting individual positions?
 % Determine energy with Leonard-Jones Function
     % While considering periodic boundary conditions (Rebecca)
-% σ = 3.4 × 10-10 m and ε = 1.65 × 10-21
-% Start by declaring space.  Change values as needed
-%%%N = 500; R = 0.001; L = 2; T = 300;        % Declare number of particles, radius of particles, and space length (L x L x L)
-% Setting T = 2.0 K for now
-%%% sigma = 0.01; epsilon  = 0.1;                    % Cutoff distance, well depth
-%%% iterations = 1000;                            % Setting iterations as 10 times for now    
+% σ = 3.4 × 10-10 m and ε = 1.65 × 10-21 
 
 %% Create old particles
 old_positions = placing_particles(N, R, L);                         % Creates old positions
@@ -45,10 +40,6 @@ for i = 1:iterations
     %%% < Insert line to append to another file >
     i = i + 1;
 end
-% subplot(1, 2, 1);
-% plot(U_hist);
-maxU = max(U_hist); ylim([-0.2*maxU, maxU]); 
-% % subplot(1, 2, 2); plot(alt_pos_hist(:, 1));
 
 
 

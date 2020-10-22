@@ -1,0 +1,5 @@
+The "Final_Responses.mlx" is our "master" file where we are answering the questions in the assignment
+- "MC_Project_Pipeline" is the subroutine that has a bulk of the pipeline.  It used to be our "master" file, so it has many outputs by default
+	- Pipeline will produce four outputs that gives the "history" of the positions, pressures, "vir" values, and potential energy at each iteration
+- "testw_alt.m" is the file that calculates the potential energy, "vir" value, and pressure at each iteration.  The naming is due to it being derived from an older file with the same name
+- "updateCheck" or the energy calculation portion of "testw_alt" seems to be the current issue, though I am unsure...

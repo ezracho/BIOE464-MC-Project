@@ -2,9 +2,11 @@ function [Utot, vir, P] = testw_alt(N, L, T, pos, sigma, epsilon, rho)
 % Returns the energy based on all interactions between particles
 % Takes inputs for side number of particles, side length, temperature, and
 % position matrix
+
+global B
 V = L^3;
 Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
-B = 1/(Kb*T);
+%B = 1/(Kb*T);
 Utot = 0;                               % Initialize energy
 vir = 0;                                % Initialize Vir
 for i = 1: N-1

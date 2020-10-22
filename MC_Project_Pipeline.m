@@ -23,7 +23,8 @@ P_hist = P_old;                                                    %History of P
                     %%% < Insert line to append to another file > %%%
 %% Create a loop for new positions
 for i = 1:iterations
-    new_positions = placing_particles(N, R, L); 
+    new_positions = pinpoint_change(old_positions, N, R, L);        % Temporarily replaced
+    % new_positions = placing_particles(N, R, L); % Temporarily replaced
     [U_new, vir_new, P_new] = testw_alt(N, L, T, new_positions, sigma, epsilon, rho_temp); % insert new energy calculation
     update = updateCheck(U_old, U_new, T); 
     if update == true

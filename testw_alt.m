@@ -5,8 +5,14 @@ function [Utot, vir, P] = testw_alt(N, L, T, pos, sigma, epsilon, rho)
 
 global B
 V = L^3;
+<<<<<<< HEAD
 Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
 %B = 1/(Kb*T);
+=======
+% Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
+% B = 1/(Kb*T);
+global B; 
+>>>>>>> 5c98ae280e61446c67c25e018a91f55ed88a6679
 Utot = 0;                               % Initialize energy
 vir = 0;                                % Initialize Vir
 for i = 1: N-1

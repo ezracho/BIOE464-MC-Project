@@ -10,11 +10,11 @@ global B;
 e_old = exp(-B*U_old);
 e_new = exp(-B*U_new);
 % Really lazy way of debugging by seeing energy and exp calculations
-U_old
-U_new
-e_old
-e_new
-val = exp(-B*(U_new-U_old))
+U_old;
+U_new;
+e_old;
+e_new;
+val = exp(-B*(U_new-U_old));
 if U_new < U_old
 %if e_new > e_old
     update = true; 

@@ -9,6 +9,6 @@ q = true;
 while q == true
     gen_pos = [(L*rand(1)-0.5), (L*rand(1)-0.5), (L*rand(1)-0.5)]; %create new position
     new_pos = [old_pos; gen_pos];                                  % Append new position
-    q = overlap(new_pos, R);                                       % Determines whether to repeat this loop
+    q = overlap(new_pos, R, L);                                       % Determines whether to repeat this loop
 end
 % Exiting loop means no overlap

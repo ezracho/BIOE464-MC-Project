@@ -3,18 +3,20 @@ function [update] = updateCheck(U_old, U_new, T)
 % Checks the energies of the old/current value with the new value
 % Takes energy calculations
 update = false;                             % Defaults false
-Kb = 1.38064852 * (10^-23); % m2 kg s-2 K-1 
-beta = 1/(T*Kb);
+global B; 
+% Kb = 1.38064852 * (10^-23); % m2 kg s-2 K-1 
+% B = 1/(T*Kb);
 
-e_old = exp(-beta*U_old);
-e_new = exp(-beta*U_new);
+e_old = exp(-B*U_old);
+e_new = exp(-B*U_new);
 % Really lazy way of debugging by seeing energy and exp calculations
-U_old
-U_new
-e_old
-e_new
-val = exp(-beta*(U_new-U_old))
-if e_new > e_old
+U_old;
+U_new;
+e_old;
+e_new;
+val = exp(-B*(U_new-U_old));
+if U_new < U_old
+%if e_new > e_old
     update = true; 
     disp('here');
 else

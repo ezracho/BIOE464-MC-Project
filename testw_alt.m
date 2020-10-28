@@ -14,15 +14,15 @@ vir = 0;                                % Initialize Vir
 for i = 1: N-1
     pos_calc = pos(i, :);   % Makes the position for calculations the current iteration row
     % Now to find energy relative to this one point.  And force, why not
-    disp("new energy run")
+  %  disp("new energy run");
     for j = i+1 : N                             % Considers all values above "i"
         U_loop = 0; vir_loop = 0;                 % Initialize energy and force for current iteration
         pos_loop = pos(j, :);                   % Take a single point
         diffD = pos_calc-pos_loop;                  
         r = (Dist(pos_calc,pos_loop,L));
         if r <= 1
-            disp("doof");                       % overlap expected due to not being initial points
-            disp(r);
+      %      disp("doof");                       % overlap expected due to not being initial points
+%             disp(r);
         end
         U_loop = LJP(epsilon, sigma, r);        % Cutoff already in LJP
         

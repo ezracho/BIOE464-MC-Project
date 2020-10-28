@@ -1,8 +1,10 @@
+
 function [repeat] = overlap(gen, R, L)
 % Returns boolean on whether to repeat or not; uses row vectors
 % gen = generated array, R = radius of particles;
 %%% Let R = sigma = 1 for now, and change threshold to just < R
-disp(R)
+global L;
+%disp(R);
 k = size(gen, 1);                                     % Finds number of points; determines iterations
 repeat = false;
 if k > 1 
@@ -12,8 +14,9 @@ if k > 1
         dist = Dist(gen(g, :),gen(k, :),L);      % Accounting for image particles
         if dist < R                              % Overlap occurs if two are closer than adjacent (r/2 + r/2)
             repeat = true;                          % Repeat if overlap occurs 
-            disp([dist, " is oof"])
+           % disp([dist, " is oof"]);
             break
         end
     end
+end
 end

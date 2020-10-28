@@ -18,12 +18,13 @@ val = exp(-B*(U_new-U_old));
 if U_new < U_old
 %if e_new > e_old
     update = true; 
-    disp('here');
+   % disp('here');
 else
-    disp('rand');
+   % disp('rand');
     randCheck = rand(1);
     q = e_new/e_old;            % Apparently can be NaN?
-    w = [q, "vs", randCheck]; disp(w);
+    w = [q, "vs", randCheck]; 
+    %disp(w);
     if e_new/e_old > randCheck
         update = true; 
 %     elseif e_new/e_old == NaN

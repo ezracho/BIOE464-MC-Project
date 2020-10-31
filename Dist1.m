@@ -1,5 +1,5 @@
 %to implement periodic boundary conditions
-function[r]=Dist(pos1,pos2,L)
+function[r]=Dist1(pos1,pos2,L)
 %%set quantity to shift by
 rcut = L/2; %max distance before particle is further than an image
 

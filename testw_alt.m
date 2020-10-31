@@ -16,7 +16,7 @@ for i = 1: N-1
         U_loop = 0; vir_loop = 0;                 % Initialize energy and force for current iteration
         pos_loop = pos(j, :);                   % Take a single point
         diffD = pos_calc-pos_loop;                  
-        r = (Dist(pos_calc,pos_loop,L));
+        r = (Dist1(pos_calc,pos_loop,L));
         if r <= 1
             disp("doof");                       % overlap expected due to not being initial points
             disp(r);

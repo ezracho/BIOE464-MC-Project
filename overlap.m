@@ -12,7 +12,7 @@ if k > 1
         dist1 = Dist1(gen(g, :),gen(k, :),L);      % Accounting for image particles
         if dist1 < R                              % Overlap occurs if two are closer than adjacent (r/2 + r/2)
             repeat = true;                          % Repeat if overlap occurs 
-            disp([dist1, " is oof"])
+             disp([dist1, " is oof"])
             break
         end
     end

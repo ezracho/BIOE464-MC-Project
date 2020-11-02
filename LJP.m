@@ -4,4 +4,4 @@ rcut=L/2;
      U2=0;
     else
         U2= 4.*epsilon.*((sigma./r).^12 - (sigma./r).^6);
-end
+    end

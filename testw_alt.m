@@ -21,7 +21,7 @@ for i = 1: N-1
             disp("doof");                       % overlap expected due to not being initial points
             disp(r);
         end
-        U_loop = LJP(epsilon, sigma, r);        % Cutoff already in LJP
+        U_loop = LJP(epsilon, sigma, r,L);        % Cutoff already in LJP
         Utot = Utot + U_loop;
         
         vir_loop = (1/3)*LJF(epsilon, sigma, r);        % Check subroutine; add cutoff

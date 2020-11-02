@@ -24,7 +24,7 @@ for i = 1: N-1
         U_loop = LJP(epsilon, sigma, r);        % Cutoff already in LJP
         Utot = Utot + U_loop;
         
-        vir_loop = (r/3)*LJF(epsilon, sigma, r);        % Check subroutine; add cutoff
+        vir_loop = (1/3)*LJF(epsilon, sigma, r);        % Check subroutine; add cutoff
         vir = vir + vir_loop;
     end
 end

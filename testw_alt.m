@@ -26,9 +26,10 @@ for i = 1: N-1
         
         vir_loop = (1/3)*LJF(epsilon, sigma, r);        % Check subroutine; add cutoff
         vir = vir + vir_loop;
+        P = (rho/B)+vir./V; 
     end
 end
-P = (rho/B)+vir./V;      % Pressure calculation (rho is defined at the top, but we will need  a loop
+     % Pressure calculation (rho is defined at the top, but we will need  a loop
 % should have total energy for configuration at the end in Etot
 
 

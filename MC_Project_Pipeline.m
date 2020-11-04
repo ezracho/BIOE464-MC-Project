@@ -41,7 +41,7 @@ for i = 1:iterations
     %%% < Insert line to append to another file >
     i = i + 1;
 end
-plot3(old_positions(:, 1), old_positions(:, 2), old_positions(:, 3), 'k.');                    % Will plot the final snaphsot of the system
+% plot3(old_positions(:, 1), old_positions(:, 2), old_positions(:, 3), 'k.');                    % Will plot the final snaphsot of the system
 
 
 

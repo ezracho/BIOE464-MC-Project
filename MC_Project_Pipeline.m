@@ -24,7 +24,7 @@ for i = 1:iterations
     new_positions = pinpoint_change(old_positions, N, L);        % Temporarily replaced
     % new_positions = placing_particles(N, R, L); % Temporarily replaced
     [U_new, vir_new, P_new] = testw_alt(N, L, new_positions, sigma, epsilon, rho_temp); % insert new energy calculation
-    update = updateCheck(U_old, U_new, T); 
+    update = updateCheck(U_old, U_new); 
     if update == true
         old_positions = new_positions;
         U_old = U_new;

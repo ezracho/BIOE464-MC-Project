@@ -1,7 +1,6 @@
 function [repeat] = overlap(gen, R, L)
 % Returns boolean on whether to repeat or not; uses row vectors
 % gen = generated array, R = radius of particles;
-disp(R)
 k = size(gen, 1);                                     % Finds number of points; determines iterations
 repeat = false;
 if k > 1 

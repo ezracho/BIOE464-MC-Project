@@ -1,26 +1,18 @@
-function [Utot, vir, P] = testw_alt(N, L, T, pos, sigma, epsilon, rho)
+function [Utot, vir, P] = testw_alt(N, L, pos, sigma, epsilon, rho)
 % Returns the energy based on all interactions between particles
 % Takes inputs for side number of particles, side length, temperature, and
 % position matrix
 V = L^3;
-% Kb = 1.38064852 * 10^-23; % m2 kg s-2 K-1 
-% B = 1/(Kb*T);
 global B; 
 Utot = 0;                               % Initialize energy
 vir = 0;                                % Initialize Vir
 for i = 1: N-1
     pos_calc = pos(i, :);   % Makes the position for calculations the current iteration row
-    % Now to find energy relative to this one point.  And force, why not
-     disp("new energy run")
     for j = i+1 : N                             % Considers all values above "i"
         U_loop = 0; vir_loop = 0;                 % Initialize energy and force for current iteration
         pos_loop = pos(j, :);                   % Take a single point
         diffD = pos_calc-pos_loop;                  
         r = (Dist1(pos_calc,pos_loop,L));
-        if r <= 1
-             disp("doof");                       % overlap expected due to not being initial points
-             disp(r);
-        end
         U_loop = LJP(epsilon, sigma, r,L);        % Cutoff already in LJP
         Utot = Utot + U_loop;
         

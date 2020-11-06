@@ -1,6 +1,5 @@
-%to implement periodic boundary conditions
 function[r]=Dist1(pos1,pos2,L)
-%%set quantity to shift by
+% Implements boundary conditions
 rcut = L/2; %max distance before particle is further than an image
 
 %%for loop to shift to nearest image

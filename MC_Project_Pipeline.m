@@ -1,4 +1,4 @@
-function [pos_hist, P_hist, vir_hist, U_hist] = MC_Project_Pipeline(N, R, L, T, sigma, epsilon, iterations, rho_temp)
+function [pos_hist, P_hist, vir_hist, U_hist, eff] = MC_Project_Pipeline(N, R, L, sigma, epsilon, iterations, rho_temp)
 %% Main pipeline; mostly pseudocode for now
 % Create the space
 % Generate old points 
@@ -16,6 +16,7 @@ pos_hist = old_positions;                                         % History of p
 U_hist = U_old;                                                   % History of energy
 vir_hist = vir_old;                                                 % History of virials 
 P_hist = P_old;                                                    %History of Pressure
+eff = 0;                                                            % Number of successful moves
 %% Create a loop for new positions
 for i = 1:iterations
     if mod(i, iterations/10) == 0
@@ -30,6 +31,7 @@ for i = 1:iterations
         U_old = U_new;
         vir_old = vir_new; 
         P_old = P_new; 
+        eff = eff + 1;
     end
     pos_hist = [pos_hist; old_positions];                           % But like it's 100 positions each time, so...
     U_hist = [U_hist; U_old];
